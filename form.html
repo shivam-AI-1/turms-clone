@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="forms.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Entry Form</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <section class="form-section">
+    <h2>User Entry Form</h2>
+    <form id="userForm">
+
+      <div class="form-group">
+        <label for="userName">Name:</label>
+        <input type="text" id="userName" name="userName" placeholder="Enter your name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+    <div id="responseMessage" class="hidden"></div>
+    <div id="redirectMessage" class="hidden"></div>
+  </section>
+
+  <script>
+ const form = document.getElementById('userForm');
+    const responseMessage = document.getElementById('responseMessage');
+    const redirectMessage = document.getElementById('redirectMessage');
+
+    form.addEventListener('submit', (event) => {
+      event.preventDefault(); 
+      console.log("Form Submitted");
+
+      const name = document.getElementById('userName').value;
+
+      responseMessage.textContent = `Thank you, ${name}!`;
+      responseMessage.classList.remove('hidden');
+
+
+      let countdown = 3;
+      redirectMessage.textContent = `Redirecting in ${countdown} seconds...`;
+      redirectMessage.classList.remove('hidden');
+
+   
+      const interval = setInterval(() => {
+        countdown--;
+        if (countdown > 0) {
+          redirectMessage.textContent = `Redirecting in ${countdown} seconds...`;
+        } else {
+          clearInterval(interval); 
+          redirectMessage.textContent = `Redirecting now...`;
+          window.location.href = "index.html"; 
+        }
+      }, 1000);
+    });
+  </script>
+
+</body>
+
+</html>
