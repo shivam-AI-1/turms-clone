@@ -1,0 +1,132 @@
+* {
+    font-family: sans-serif;
+    
+}
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+}
+  
+
+.hehe {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 36px;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 10px;
+    color: #232322;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -53px;
+    margin-left: 150px;
+}
+
+.nav-icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  list-style: none;
+}
+
+
+.nav-icons li {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  font-size: 15px;
+  margin:  19px;
+  margin-top: -74px;
+  color: #232322;
+}
+.carousel-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    margin-top: -14px;
+}
+  .carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .carousel-slide {
+    display: flex;
+    width: 100%;
+  }
+  
+  .carousel-slide img {
+    width: 100vw; 
+    flex-shrink: 0; 
+  }
+  
+  .prev,
+  .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .prev {
+    left: 10px;
+  }
+  
+  .next {
+    right: 10px;
+  }
+  
+  .prev:hover,
+  .next:hover {
+    background-color: black;
+}
+  
+
+.head{
+    margin-top: 80px;
+    margin-left: 78px;
+    color: #232322;
+    font-size: 27px;
+}
+
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    width: 100%;
+    padding: 20px;
+    margin-left: 60px;
+}
+
+.product-card img {
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.product-card {
+    border-right: 2px solid #ccc;
+    padding: 0px 20px;
+}
+
+
+.product-card img:hover{
+    transform: scale(1.05);
+}
